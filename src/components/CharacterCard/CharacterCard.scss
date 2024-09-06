@@ -1,0 +1,32 @@
+.character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 250px;
+    height: 30rem;
+    background: rgb(60, 62, 68);
+    border-radius: 10px;
+    margin: 0.75rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+
+    &__heading {
+        text-decoration: underline;
+    }
+
+    .character-info {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: left;
+        flex-wrap: wrap;
+        height: 80%;
+    }
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

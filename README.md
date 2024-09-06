@@ -28,6 +28,13 @@
 
 ### 3. Create main section
 
+## 1. Create Card component
+ - HTML
+  - Create div for card 
+  - add h3 element for character name
+  - add img element for character image
+  - add p tags for 
+
   
 
 
