@@ -1,0 +1,19 @@
+.heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid cyan;
+    
+
+    &--background {
+
+    }
+
+    .page-heading {
+        font-size: 80px;
+        letter-spacing: 5px;
+
+        .page-heading--color {
+        }
+    }
+}
