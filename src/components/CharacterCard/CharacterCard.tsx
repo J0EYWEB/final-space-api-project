@@ -2,20 +2,22 @@ import './CharacterCard.scss';
 
 
 type CharacterCardProps = {
+    name: string;
     gender: string;
     species: string;
     status: string;
     origin: string;
+    img_url: string;
 }
 
 
-const CharacterCard = ({gender, species, status, origin}: CharacterCardProps) => {
+const CharacterCard = ({name, gender, species, status, origin, img_url}: CharacterCardProps) => {
   return (
     <div className='character-card'>
         <div className='character-card__image-container'>
-            <img src="https://finalspaceapi.com/api/character/avatar/gary_goodspeed.png" alt="" />
+            <img src={img_url} alt="" />
         </div>
-        <h3 className='character-card__heading'>Name</h3>
+        <h3 className='character-card__heading'>{name}</h3>
         <div className='character-info'>
             <p>Gender: {gender} </p>
             <p>Species: {species}</p>
