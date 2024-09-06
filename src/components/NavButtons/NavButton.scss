@@ -1,0 +1,18 @@
+.nav-button {
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 10px 0;
+    
+
+    &__border {
+        border-radius: 10px;
+
+
+        &--colour {
+            border: 2px solid #0585a5;
+        }
+    }
+}
