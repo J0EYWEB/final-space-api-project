@@ -13,9 +13,9 @@ type CharacterCardProps = {
 
 const CharacterCard = ({name, gender, species, status, origin, img_url}: CharacterCardProps) => {
     const boxShadowModifier = () => {
-        if (status === 'Deceased') {
+        if (status.includes('Deceased') || status.includes('Destroyed')) {
             return 'character-card--deceased';
-        } else if (status === 'Unknown'){
+        } else if (status.includes('Unknown')){
             return  'character-card--unknown';
         } else {
             return '';
