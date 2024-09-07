@@ -8,7 +8,15 @@
     background: rgb(60, 62, 68);
     border-radius: 10px;
     margin: 0.75rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: 5px 5px 20px green, -5px -5px 20px green;
+
+    &--deceased {
+        box-shadow: 5px 5px 20px red, -5px -5px 20px red;
+    }
+
+    &--unknown {
+        box-shadow: 5px 5px 20px purple, -5px -5px 20px purple;
+    }
 
 
     &__heading {

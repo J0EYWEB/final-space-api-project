@@ -10,4 +10,5 @@ const NavButon = ({ label }: NavButtonProps) => {
   )
 }
 
+
 export default NavButon
