@@ -1,34 +1,42 @@
-import NavButon from '../NavButtons/NavButon';
+import NavButton from '../NavButtons/NavButton';
 import Characters from '../Types/Characters';
 import './Nav.scss';
 
 type NavProps = {
     data: Characters[];
+    setChar: (char: Characters[]) => void;
+    reset: () => void;
 }
 
-const Nav = ( {data}: NavProps) => {
-    const charStatus = [...new Set(data.map((val:Characters) => val.status))];
+const Nav = ( {data, setChar, reset}: NavProps) => {
+    const charStatus = [...new Set(data.map((character: Characters) => character.status))];
+    const charSpecies = [...new Set(data.map((character: Characters) => character.species))]
+
+    const filterCharacters = (currentCat:string) => {
+        const filteredItems = data.filter((newItem) => {
+            return newItem.status === currentCat;
+        });
+
+        console.log(filteredItems);
+        setChar(filteredItems);
+    }
 
 
   return (
     <nav className='nav-display'>
+        <NavButton label='All' filter={reset}/>
         <h2 className='nav-display__header'>Gender</h2>
         <div className='button-container'>
-            <NavButon label="Male"/>
-            <NavButon label="Female"/>
-            <NavButon label="Other"/>
         </div>
         <h2 className='nav-display__header'>Species</h2>
         <div className='button-container'>
-            <NavButon label="Male"/>
-            <NavButon label="Female"/>
-            <NavButon label="None" />
-        </div>
+      
+        </div> 
         <h2 className='nav-display__header'>Status</h2>
         <div className='button-container'>
             {charStatus.map((stat,index) => {
                 return(
-                    <NavButon key={index} label={stat}/>
+                    <NavButton key={index} label={stat} filter={() => filterCharacters(stat)}/>
                 )
             })}
         </div>
