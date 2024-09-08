@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.scss'
-
 import Heading from './components/Heading/Heading'
-import Nav from './components/Nav/Nav'
-import CardsSection from './containers/CardsSection';
+import Nav from './containers/Nav/Nav'
+import CardsSection from './containers/CardsSection/CardsSection';
+
 
 function App() {
   const [char, setChar] = useState<any[]>([]);
@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     getCharacterList();
   }, []);
+
 
   return (
     <>

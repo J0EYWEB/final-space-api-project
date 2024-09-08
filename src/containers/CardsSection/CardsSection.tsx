@@ -1,6 +1,6 @@
-import CharacterCard from '../components/CharacterCard/CharacterCard';
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import './CardsSection.scss';
-import characters from '../components/Types/Characters';
+import characters from '../../components/Types/Characters';
 // import { useEffect, useState } from 'react';
 
 
