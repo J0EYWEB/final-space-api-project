@@ -1,11 +1,12 @@
+@import '../../assets/styles/variables.scss';
 .character-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     overflow: hidden;
     width: 250px;
-    height: 30rem;
-    background: rgb(60, 62, 68);
+    height: 35rem;
+    background: #002934e8;
     border-radius: 10px;
     margin: 0.75rem;
     box-shadow: 5px 5px 20px green, -5px -5px 20px green;
@@ -20,16 +21,22 @@
 
 
     &__heading {
-        text-decoration: underline;
+        text-align: center;
+        font-family: $header-font;
+        font-size: 28px;
     }
 
     .character-info {
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: start;
         text-align: left;
         flex-wrap: wrap;
         height: 80%;
+        padding-left: 10px;
+        font-family: $para-font;
     }
+
 }
 
 img {

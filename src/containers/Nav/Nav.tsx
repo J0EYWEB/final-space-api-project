@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import NavButton from '../../components/NavButtons/NavButton';
-import Characters from '../../components/Types/Characters';
+import NavSearch from '../../components/NavSearch/NavSearch';
+import Characters from '../../data/Types/Characters';
 import './Nav.scss';
 
 type NavProps = {
     data: Characters[];
+    original: Characters[];
     setChar: (char: Characters[]) => void;
     reset: () => void;
 }
 
-const Nav = ( {data, setChar, reset}: NavProps) => {
+const Nav = ( {data, setChar, reset, original }: NavProps) => {
+    const [searchItem, setSearchItem] = useState('');
     //FILTERS
     //status filter
     const charStatus = [...new Set(data.filter((charStatus) => charStatus.status).map((character: Characters) => character.status))];
@@ -63,10 +67,23 @@ const Nav = ( {data, setChar, reset}: NavProps) => {
         setChar(filteredItems);
     }
 
+    //Search by name filter function.
+    const handleSearchChange = (event: any) => {
+        const searchTerm = event.target.value;
+        setSearchItem(searchTerm);
+
+        const filteredSearchItems = original.filter((characters: Characters) => characters.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+        setChar(filteredSearchItems);
+    }
 
   return (
     <nav className='nav-display'>
-        <NavButton label='All' filter={reset}/>
+        <h2 className="nav-display__header">Search</h2>
+        <NavSearch character={searchItem} inputChange={handleSearchChange}/>
+        <div className='button-container'>
+            <NavButton label='All' filter={reset}/>
+        </div> 
         <h2 className='nav-display__header'>Gender</h2>
         <div className='button-container'>
             {CharGender.map((stat, index) => {

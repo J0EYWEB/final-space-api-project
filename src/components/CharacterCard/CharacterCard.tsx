@@ -15,6 +15,7 @@ const CharacterCard = ({name, gender, species, status, origin, img_url}: Charact
     if(species === undefined){
         species = 'Unknown';
     }
+    //Modifies the card boxShadow depending on character status
     const boxShadowModifier = () => {
         if (status.includes('Deceased') || status.includes('Destroyed')) {
             return 'character-card--deceased';

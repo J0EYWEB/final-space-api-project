@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables.scss';
+
 .heading-container {
     display: flex;
     justify-content: center;
@@ -6,12 +8,15 @@
     
 
     &--background {
-        background-color: #002934;
+        background-color: #00293488;
     }
 
     .page-heading {
         font-size: 80px;
+        color: white;
         letter-spacing: 5px;
+        font-family: $header-font;
+        text-transform: uppercase;
 
     
     }

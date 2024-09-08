@@ -1,5 +1,5 @@
 import './NavButton.scss';
-import '../Types/Characters';
+import '../../data/Types/Characters';
 // import Characters from '../Types/Characters';
 type NavButtonProps = {
     label: string;
