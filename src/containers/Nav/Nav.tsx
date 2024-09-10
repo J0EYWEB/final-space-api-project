@@ -12,7 +12,15 @@ type NavProps = {
 }
 
 const Nav = ( {data, setChar, reset, original }: NavProps) => {
-    const [searchItem, setSearchItem] = useState('');
+
+    //Use effects
+    
+    const [searchItem, setSearchItem] = useState<string>('');
+    const [toggleGenderFilter, setGenderFilter] = useState(false);
+    const [toggleSpeciesFilter, setSpeciesFilter] = useState(false);
+    const [toggleStatusFilter, setStatusFilter] = useState(false);
+    
+   
     //FILTERS
     //status filter
     const charStatus = [...new Set(data.filter((charStatus) => charStatus.status).map((character: Characters) => character.status))];
@@ -77,6 +85,23 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setChar(filteredSearchItems);
     }
 
+    
+
+    const handleToggleFilterGender = () => {
+        setGenderFilter(!toggleGenderFilter);
+    }
+    
+    const handleToggleFilterSpecies = () => {
+        setSpeciesFilter(!toggleSpeciesFilter);
+    }
+    const handleToggleFilterStatus = () => {
+        setStatusFilter(!toggleStatusFilter);
+    }
+
+
+
+    
+
   return (
     <nav className='nav-display'>
         <h2 className="nav-display__header">Search</h2>
@@ -84,30 +109,30 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         <div className='button-container'>
             <NavButton label='All' filter={reset}/>
         </div> 
-        <h2 className='nav-display__header'>Gender</h2>
-        <div className='button-container'>
+        <h2 onClick={handleToggleFilterGender} className='nav-display__header'>Gender</h2>
+        {toggleGenderFilter && <div className='button-container'>
             {CharGender.map((stat, index) => {
                 return(
                     <NavButton key={index} label={stat} filter={() => handleFIlterCharacterGender(stat)} />
                 )
             })}
-        </div>
-        <h2 className='nav-display__header'>Species</h2>
-        <div className='button-container'>
+        </div>}
+        <h2 onClick={handleToggleFilterSpecies} className='nav-display__header'>Species</h2>
+        {toggleSpeciesFilter && <div className='button-container'>
             {charSpecies.map((stat, index) => {
                 return(
                     <NavButton key={index} label={stat} filter={() => handleFilterCharacterSpecies(stat)}/>
                 )
             })}
-        </div> 
-        <h2 className='nav-display__header'>Status</h2>
-        <div className='button-container'>
+        </div>}
+        <h2 onClick={handleToggleFilterStatus} className='nav-display__header'>Status</h2>
+        {toggleStatusFilter && <div className='button-container'>
             {charStatus.map((stat,index) => {
                 return(
                     <NavButton key={index} label={stat} filter={() => handleFilterCharacterStatus(stat)}/>
                 )
             })}
-        </div>
+        </div>}
     </nav>
   )
 }
