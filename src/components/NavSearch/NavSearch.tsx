@@ -9,7 +9,7 @@ type NavSearchProps = {
 const NavSearch = ({inputChange, character}: NavSearchProps) => {
   return (
     <div className="nav-search">
-      <input type="text" value={character} onChange={inputChange}></input>
+      <input className='nav-search__input' type="text" value={character} onChange={inputChange}></input>
     </div>
   )
 }

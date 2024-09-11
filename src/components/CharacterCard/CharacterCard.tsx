@@ -34,10 +34,15 @@ const CharacterCard = ({name, gender, species, status, origin, img_url}: Charact
         </div>
         <h3 className='character-card__heading '>{name}</h3>
         <div className='character-info'>
-            <p>Gender: {gender} </p>
-            <p>Species: {species}</p>
-            <p>Status: {status}</p> 
-            <p>Origin: {origin}</p>
+            <h4 className='character-info__header'>Gender:</h4>
+            <p className='character-info__para'>{gender}</p>
+            <h4 className='character-info__header'>Species:</h4>
+            <p className='character-info__para'>{species}</p>
+            <h4 className='character-info__header'>Status:</h4> 
+            <p className='character-info__para'>{status}</p>
+            <h4 className='character-info__header'>Origin:</h4>
+            <p className='character-info__para'>{origin}</p>
+            
         </div>
              
     </div>

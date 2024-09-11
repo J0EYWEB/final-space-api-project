@@ -14,7 +14,7 @@ type NavProps = {
 const Nav = ( {data, setChar, reset, original }: NavProps) => {
 
     //Use effects
-    
+
     const [searchItem, setSearchItem] = useState<string>('');
     const [toggleGenderFilter, setGenderFilter] = useState(false);
     const [toggleSpeciesFilter, setSpeciesFilter] = useState(false);
@@ -86,7 +86,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     }
 
     
-
+    //Functions for toggle filter containers
     const handleToggleFilterGender = () => {
         setGenderFilter(!toggleGenderFilter);
     }
