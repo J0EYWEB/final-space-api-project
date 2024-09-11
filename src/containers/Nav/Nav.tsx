@@ -109,7 +109,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         <div className='button-container'>
             <NavButton label='All' filter={reset}/>
         </div> 
-        <h2 onClick={handleToggleFilterGender} className='nav-display__header'>Gender</h2>
+        <button onClick={handleToggleFilterGender} className='nav-display__button'>Gender</button>
         {toggleGenderFilter && <div className='button-container'>
             {CharGender.map((stat, index) => {
                 return(
@@ -117,7 +117,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
                 )
             })}
         </div>}
-        <h2 onClick={handleToggleFilterSpecies} className='nav-display__header'>Species</h2>
+        <button onClick={handleToggleFilterSpecies} className='nav-display__button'>Species</button>
         {toggleSpeciesFilter && <div className='button-container'>
             {charSpecies.map((stat, index) => {
                 return(
@@ -125,7 +125,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
                 )
             })}
         </div>}
-        <h2 onClick={handleToggleFilterStatus} className='nav-display__header'>Status</h2>
+        <button onClick={handleToggleFilterStatus} className='nav-display__button'>Status</button>
         {toggleStatusFilter && <div className='button-container'>
             {charStatus.map((stat,index) => {
                 return(

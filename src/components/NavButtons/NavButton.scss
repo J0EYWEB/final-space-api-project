@@ -1,10 +1,15 @@
+@import '../../assets/styles/variables.scss';
+
 .nav-button {
     padding: 20px;
     background-color: transparent;
     color: white;
     font-size: 20px;
+    font-family: $para-font;
     width: 100%;
+    height:auto;
     margin: 10px 0;
+    transition: 0.25s;
     
 
     &__border {
@@ -15,4 +20,10 @@
             border: 2px solid #0585a5;
         }
     }
+}
+
+.nav-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #002934e8;
 }

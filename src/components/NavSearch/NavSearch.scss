@@ -1,7 +1,8 @@
+@import '../../assets/styles/variables.scss';
 .nav-search {
     display: flex;
     justify-content: center;
-    
+
     &__input {
         border: 2px solid #0585a5;
         background-color: #002934e8;
@@ -10,6 +11,12 @@
         color: white;
         border-radius: 10px;
         font-size: 20px;
+        font-family: $para-font;
 
+    }
+
+    &__input:focus {
+        outline: none;
+        border-color: cyan;
     }
 }
