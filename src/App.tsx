@@ -3,11 +3,14 @@ import './App.scss'
 import Heading from './components/Heading/Heading'
 import Nav from './containers/Nav/Nav'
 import CardsSection from './containers/CardsSection/CardsSection';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CharacterInfo from './components/CharacterInfo/CharacterInfo';
+import Characters from './data/Types/Characters';
 
 
 function App() {
-  const [char, setChar] = useState<any[]>([]);
-  const [characterSeachDefault, setCharacterSearchDefault] = useState<any[]>([]);
+  const [char, setChar] = useState<Characters[]>([]);
+  const [characterSeachDefault, setCharacterSearchDefault] = useState<Characters[]>([]);
 
   fetch("https://finalspaceapi.com/api/v0/character")
       .then((res) => res.json())
@@ -24,13 +27,23 @@ function App() {
 
 
   return (
+    <BrowserRouter>
     <>
-      <Heading heading="Final Space Character Database" />
-      <main>
-      <Nav data={char} setChar={setChar} reset={getCharacterList} original={characterSeachDefault}/>
-      <CardsSection data={char} />
-      </main>
+      <Routes>
+        <Route path='/characters' element={
+          <>
+          <Heading heading="Final Space Character Database" />
+          <main>
+          <Nav data={char} setChar={setChar} reset={getCharacterList} original={characterSeachDefault}/>
+          <CardsSection data={char} />
+          </main> 
+          </>
+        }/>
+        <Route path='/characters/:id' element={<CharacterInfo characters={char}/>}/>
+      </Routes>
     </>
+    
+    </BrowserRouter>
   )
 }
 

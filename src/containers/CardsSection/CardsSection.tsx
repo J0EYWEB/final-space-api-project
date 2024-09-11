@@ -1,6 +1,7 @@
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import './CardsSection.scss';
 import characters from '../../data/Types/Characters';
+import {Link} from 'react-router-dom';
 // import { useEffect, useState } from 'react';
 
 
@@ -13,8 +14,10 @@ const CardsSection = ({data}: CardsSectionProps)=> {
   return (
     <section className='character-container'>
       {data.map((characters: characters) => {
-        return(
-            <CharacterCard key={characters.id} name={characters.name} gender={characters.gender} species={characters.species} status={characters.status} origin={characters.origin} img_url={characters.img_url} />
+        return (
+          <Link key={characters.id} to={`/characters/${characters.id}`}>
+            <CharacterCard key={characters.id} characters={characters} />
+          </Link>
         )
       })}
     </section>

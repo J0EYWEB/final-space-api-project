@@ -19,6 +19,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     const [toggleGenderFilter, setGenderFilter] = useState(false);
     const [toggleSpeciesFilter, setSpeciesFilter] = useState(false);
     const [toggleStatusFilter, setStatusFilter] = useState(false);
+    const [toggleOriginFilter, setOriginFilter] = useState(false);
     
    
     //FILTERS
@@ -48,6 +49,10 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     }))];
 
 
+    // Origin filter
+    const charOrigin = [...new Set(data.filter((charOrigin) => charOrigin.origin).map((character: Characters) => character.origin))];
+
+
     //FILTER FUNCTIONS
     //Gender filter function
     const handleFIlterCharacterGender = (currentCat: string) => {
@@ -75,6 +80,13 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setChar(filteredItems);
     }
 
+    const handleFilterCharacterOrigin = (currentCat: string) => {
+        const filteredItems = data.filter((newItem) => {
+            return newItem.origin === currentCat;
+        })
+        setChar(filteredItems);
+    }
+
     //Search by name filter function.
     const handleSearchChange = (event: any) => {
         const searchTerm = event.target.value;
@@ -94,8 +106,13 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     const handleToggleFilterSpecies = () => {
         setSpeciesFilter(!toggleSpeciesFilter);
     }
+
     const handleToggleFilterStatus = () => {
         setStatusFilter(!toggleStatusFilter);
+    }
+
+    const handleToggleFilterOrigin = () => {
+        setOriginFilter(!toggleOriginFilter);
     }
 
 
@@ -130,6 +147,14 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
             {charStatus.map((stat,index) => {
                 return(
                     <NavButton key={index} label={stat} filter={() => handleFilterCharacterStatus(stat)}/>
+                )
+            })}
+        </div>}
+        <button onClick={handleToggleFilterOrigin} className='nav-display__button'>Origin</button>
+        {toggleOriginFilter && <div className='button-container'>
+            {charOrigin.map((stat,index) => {
+                return(
+                    <NavButton key={index} label={stat} filter={() => handleFilterCharacterOrigin(stat)}/>
                 )
             })}
         </div>}
