@@ -1,12 +1,18 @@
+@import '../../assets/styles/variables.scss';
+
 .page-nav-button {
     padding: 10px 50px;
     background: transparent;
     color: white;
     border: 2px solid cyan;
     border-radius: 10px;
+    font-family: $para-font;
+    font-size: 20px;
+    transition: .2s;
 }
 
 .page-nav-button:hover {
     border-color: white;
     cursor: pointer;
+    transform: scale(1.05);
 }

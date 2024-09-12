@@ -8,6 +8,7 @@ import CharacterInfo from './components/CharacterInfo/CharacterInfo';
 import Characters from './data/Types/Characters';
 import PageNav from './containers/PageNav/PageNav';
 import WelcomePage from './containers/WelcomePage/WelcomePage';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <SideNav data={char} setChar={setChar} reset={getCharacterList} original={characterSeachDefault}/>
           <CardsSection data={char} />
           </main> 
+          <Footer />
           </>
         }/>
         <Route path='/characters/:id' element={<CharacterInfo characters={char}/>}/>
