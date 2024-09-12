@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.scss'
 import Heading from './components/Heading/Heading'
 import SideNav from './containers/SideNav/SideNav'
 import CardsSection from './containers/CardsSection/CardsSection';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CharacterInfo from './components/CharacterInfo/CharacterInfo';
 import Characters from './data/Types/Characters';
 import PageNav from './containers/PageNav/PageNav';
+import WelcomePage from './containers/WelcomePage/WelcomePage';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
     <>
       <PageNav />
       <Routes>
+        <Route path='/' element={<WelcomePage />} />
         <Route path='/characters' element={
           <>
           <Heading heading="Final Space Character Database" />
