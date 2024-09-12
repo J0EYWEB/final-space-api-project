@@ -1,4 +1,4 @@
-import './NavButton.scss';
+import './SideNavButton.scss';
 import '../../data/Types/Characters';
 // import Characters from '../Types/Characters';
 type NavButtonProps = {

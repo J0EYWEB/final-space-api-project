@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import NavButton from '../../components/NavButtons/NavButton';
+import SideNavButton from '../../components/SideNavButtons/SideNavButton';
 import NavSearch from '../../components/NavSearch/NavSearch';
 import Characters from '../../data/Types/Characters';
 import './SideNav.scss';
@@ -106,13 +106,13 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         <h2 className="nav-display__header">Search</h2>
         <NavSearch character={searchItem} inputChange={handleSearchChange}/>
         <div className='button-container'>
-            <NavButton label='All' filter={reset}/>
+            <SideNavButton label='All' filter={reset}/>
         </div> 
         <button onClick={handleToggleFilterGender} className='nav-display__button'>Gender</button>
         {toggleGenderFilter && <div className='button-container'>
             {CharGender.map((stat, index) => {
                 return(
-                    <NavButton key={index} label={stat} filter={() => handleFIlterCharacterGender(stat)} />
+                    <SideNavButton key={index} label={stat} filter={() => handleFIlterCharacterGender(stat)} />
                 )
             })}
         </div>}
@@ -120,7 +120,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleSpeciesFilter && <div className='button-container'>
             {charSpecies.map((stat, index) => {
                 return(
-                    <NavButton key={index} label={stat} filter={() => handleFilterCharacterSpecies(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterSpecies(stat)}/>
                 )
             })}
         </div>}
@@ -128,7 +128,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleStatusFilter && <div className='button-container'>
             {charStatus.map((stat,index) => {
                 return(
-                    <NavButton key={index} label={stat} filter={() => handleFilterCharacterStatus(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterStatus(stat)}/>
                 )
             })}
         </div>}
@@ -136,7 +136,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleOriginFilter && <div className='button-container'>
             {charOrigin.map((stat,index) => {
                 return(
-                    <NavButton key={index} label={stat} filter={() => handleFilterCharacterOrigin(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterOrigin(stat)}/>
                 )
             })}
         </div>}

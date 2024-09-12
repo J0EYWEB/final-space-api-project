@@ -6,6 +6,7 @@ import CardsSection from './containers/CardsSection/CardsSection';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CharacterInfo from './components/CharacterInfo/CharacterInfo';
 import Characters from './data/Types/Characters';
+import PageNav from './containers/PageNav/PageNav';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
   return (
     <BrowserRouter>
     <>
+      <PageNav />
       <Routes>
         <Route path='/characters' element={
           <>
