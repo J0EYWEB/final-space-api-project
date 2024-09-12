@@ -12,7 +12,7 @@ const CharacterCard = ({characters}: CharacterCardProps) => {
     if(characters.species === undefined){
         characters.species = 'Unknown';
     }
-    //Modifies the card boxShadow depending on character status
+
     const boxShadowModifier = () => {
         if (characters.status.includes('Deceased') || characters.status.includes('Destroyed')) {
             return 'character-card--deceased';
@@ -22,7 +22,6 @@ const CharacterCard = ({characters}: CharacterCardProps) => {
             return '';
         }
     }
-
 
   return (
         <div className={`character-card ${boxShadowModifier()}`}>

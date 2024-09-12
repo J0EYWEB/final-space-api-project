@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NavButton from '../../components/NavButtons/NavButton';
 import NavSearch from '../../components/NavSearch/NavSearch';
 import Characters from '../../data/Types/Characters';
-import './Nav.scss';
+import './SideNav.scss';
 
 type NavProps = {
     data: Characters[];
@@ -11,9 +11,7 @@ type NavProps = {
     reset: () => void;
 }
 
-const Nav = ( {data, setChar, reset, original }: NavProps) => {
-
-    //Use effects
+const SideNav = ( {data, setChar, reset, original }: NavProps) => {
 
     const [searchItem, setSearchItem] = useState<string>('');
     const [toggleGenderFilter, setGenderFilter] = useState(false);
@@ -21,12 +19,9 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     const [toggleStatusFilter, setStatusFilter] = useState(false);
     const [toggleOriginFilter, setOriginFilter] = useState(false);
     
-   
-    //FILTERS
-    //status filter
+
     const charStatus = [...new Set(data.filter((charStatus) => charStatus.status).map((character: Characters) => character.status))];
 
-    //Species filter with if statements to clean up API strings
     const charSpecies = [...new Set(data.filter((charSpecies) => charSpecies.species).map((character: Characters) => {
         if(character.species.toLocaleLowerCase().includes('titan')){
             character.species = 'Titan';
@@ -37,7 +32,6 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         return character.species
     }))];
 
-    // Gender filter with if statements to clean up API strings
     const CharGender = [...new Set(data.filter((charGender) => charGender.gender).map((character: Characters) => {
         if(character.gender.toLowerCase().includes('genderfluid')){
             character.gender = 'Genderfluid';
@@ -48,13 +42,8 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         return character.gender
     }))];
 
-
-    // Origin filter
     const charOrigin = [...new Set(data.filter((charOrigin) => charOrigin.origin).map((character: Characters) => character.origin))];
 
-
-    //FILTER FUNCTIONS
-    //Gender filter function
     const handleFIlterCharacterGender = (currentCat: string) => {
         const filteredGender = data.filter((newItem) => {
             return newItem.gender === currentCat;
@@ -62,7 +51,6 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setChar(filteredGender);
     }
 
-    //Species filter function
     const handleFilterCharacterSpecies = (currentCat: string) =>{
         const filteredSpecies = data.filter((newItem) => {
             return newItem.species === currentCat;
@@ -71,7 +59,6 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setChar(filteredSpecies);
     }
 
-    //Status filter function
     const handleFilterCharacterStatus = (currentCat:string) => {
         const filteredItems = data.filter((newItem) => {
             return newItem.status === currentCat;
@@ -87,7 +74,7 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setChar(filteredItems);
     }
 
-    //Search by name filter function.
+
     const handleSearchChange = (event: any) => {
         const searchTerm = event.target.value;
         setSearchItem(searchTerm);
@@ -98,7 +85,6 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
     }
 
     
-    //Functions for toggle filter containers
     const handleToggleFilterGender = () => {
         setGenderFilter(!toggleGenderFilter);
     }
@@ -115,12 +101,8 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
         setOriginFilter(!toggleOriginFilter);
     }
 
-
-
-    
-
   return (
-    <nav className='nav-display'>
+    <aside className='nav-display'>
         <h2 className="nav-display__header">Search</h2>
         <NavSearch character={searchItem} inputChange={handleSearchChange}/>
         <div className='button-container'>
@@ -158,8 +140,8 @@ const Nav = ( {data, setChar, reset, original }: NavProps) => {
                 )
             })}
         </div>}
-    </nav>
+    </aside>
   )
 }
 
-export default Nav
+export default SideNav

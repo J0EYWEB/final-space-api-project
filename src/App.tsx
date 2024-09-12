@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.scss'
 import Heading from './components/Heading/Heading'
-import Nav from './containers/Nav/Nav'
+import SideNav from './containers/SideNav/SideNav'
 import CardsSection from './containers/CardsSection/CardsSection';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CharacterInfo from './components/CharacterInfo/CharacterInfo';
@@ -34,7 +34,7 @@ function App() {
           <>
           <Heading heading="Final Space Character Database" />
           <main>
-          <Nav data={char} setChar={setChar} reset={getCharacterList} original={characterSeachDefault}/>
+          <SideNav data={char} setChar={setChar} reset={getCharacterList} original={characterSeachDefault}/>
           <CardsSection data={char} />
           </main> 
           </>
