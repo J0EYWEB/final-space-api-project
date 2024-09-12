@@ -1,0 +1,30 @@
+@import '../../assets/styles/variables.scss';
+
+.welcome-page-container {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #0585a5;
+
+    &__card {
+        background-image: url('../../assets/images/wp6521869-netflix-final-space-wallpapers.jpg');
+        background-repeat: none;
+        background-size: cover;
+        border: 2px solid #0585a5;
+        border-radius: 10px;
+        height: 80vh;
+        width: 80vw;
+
+        h1 {
+            width: 50%;
+            font-family: $header-font;
+            font-size: 80px;
+            color: white;
+            background: -webkit-linear-gradient(0.1turn, white, #0585a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+}
