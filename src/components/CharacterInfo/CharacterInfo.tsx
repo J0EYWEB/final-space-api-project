@@ -19,14 +19,10 @@ const CharacterInfo = ({characters}: CharacterInfoProps) => {
     }, [characters]);
 
 
-    const {name, gender, status, hair, origin, species, img_url, alias} = {...char};
+    let {name, gender, status, hair, origin, species, img_url, alias} = {...char};
 
-    if (alias === undefined){
-        return( 
-            'undefined'
-        )
-    }
-
+    
+    console.log(alias);
   return (
     <div className='page-container'>
         <div className='character-main-card'>
@@ -60,18 +56,14 @@ const CharacterInfo = ({characters}: CharacterInfoProps) => {
                         <h2 className='main-card-subheading'>Alias:</h2> 
                         <ul>
                         {
-                        alias.map((name, index: number) => {
-                            
-                            if(name === undefined){
-                                return(
-                                    <li>No known Alias</li>
-                                )
-                            }else if(index < 5){
-                            return(
-                                <li key={index}>{name}</li>
-                            )}
-
-                        })}
+                            !alias || alias.length === 0 ? (
+                                <li>No Known Alias</li>
+                            ) : (
+                                alias.slice(0, 5).map((name, index) => (
+                                    <li key={index}>{name}</li>
+                                ))
+                            )
+                        }
                         </ul>
                     </div>
                  </div>

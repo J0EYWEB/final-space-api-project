@@ -44,32 +44,10 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
 
     const charOrigin = [...new Set(data.filter((charOrigin) => charOrigin.origin).map((character: Characters) => character.origin))];
 
-    const handleFIlterCharacterGender = (currentCat: string) => {
-        const filteredGender = data.filter((newItem) => {
-            return newItem.gender === currentCat;
-        })
-        setChar(filteredGender);
-    }
 
-    const handleFilterCharacterSpecies = (currentCat: string) =>{
-        const filteredSpecies = data.filter((newItem) => {
-            return newItem.species === currentCat;
-        })
-
-        setChar(filteredSpecies);
-    }
-
-    const handleFilterCharacterStatus = (currentCat:string) => {
+    const handleFilterCharacters = (key: 'gender' | 'species' | 'status' | 'origin', value: string) => {
         const filteredItems = data.filter((newItem) => {
-            return newItem.status === currentCat;
-        });
-
-        setChar(filteredItems);
-    }
-
-    const handleFilterCharacterOrigin = (currentCat: string) => {
-        const filteredItems = data.filter((newItem) => {
-            return newItem.origin === currentCat;
+        return newItem[key] === value
         })
         setChar(filteredItems);
     }
@@ -112,7 +90,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleGenderFilter && <div className='button-container'>
             {CharGender.map((stat, index) => {
                 return(
-                    <SideNavButton key={index} label={stat} filter={() => handleFIlterCharacterGender(stat)} />
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacters('gender', stat)} />
                 )
             })}
         </div>}
@@ -120,7 +98,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleSpeciesFilter && <div className='button-container'>
             {charSpecies.map((stat, index) => {
                 return(
-                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterSpecies(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacters('species', stat)}/>
                 )
             })}
         </div>}
@@ -128,7 +106,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleStatusFilter && <div className='button-container'>
             {charStatus.map((stat,index) => {
                 return(
-                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterStatus(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacters('status', stat)}/>
                 )
             })}
         </div>}
@@ -136,7 +114,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         {toggleOriginFilter && <div className='button-container'>
             {charOrigin.map((stat,index) => {
                 return(
-                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacterOrigin(stat)}/>
+                    <SideNavButton key={index} label={stat} filter={() => handleFilterCharacters('origin', stat)}/>
                 )
             })}
         </div>}

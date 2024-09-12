@@ -5,7 +5,7 @@ type Characters = {
     species: string;
     gender: string;
     hair: string;
-    alias: [];
+    alias: string[];
     origin: string;
     abilities: [];
     img_url: string;

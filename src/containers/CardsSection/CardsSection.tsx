@@ -2,7 +2,6 @@ import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import './CardsSection.scss';
 import characters from '../../data/Types/Characters';
 import {Link} from 'react-router-dom';
-// import { useEffect, useState } from 'react';
 
 
 type CardsSectionProps = {
@@ -11,7 +10,7 @@ type CardsSectionProps = {
 
 const CardsSection = ({data}: CardsSectionProps)=> {
     
-  return (
+  return data.length > 0 ? (
     <section className='character-container'>
       {data.map((characters: characters) => {
         return (
@@ -21,6 +20,10 @@ const CardsSection = ({data}: CardsSectionProps)=> {
         )
       })}
     </section>
+  ) : (
+    <div className='default-error default-error--color'>
+      <h4 className='default-error__heading '>No Characters Found</h4>
+    </div>
   )
 }
 
