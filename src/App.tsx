@@ -14,20 +14,21 @@ function App() {
   const [char, setChar] = useState<Characters[]>([]);
   const [characterSeachDefault, setCharacterSearchDefault] = useState<Characters[]>([]);
 
-  fetch("https://finalspaceapi.com/api/v0/character")
-      .then((res) => res.json())
-      .then((data) => setCharacterSearchDefault(data));
 
   const getCharacterList = () =>{
     fetch("https://finalspaceapi.com/api/v0/character")
       .then((res) => res.json())
-      .then((data) => setChar(data));
+      .then((data) => {
+        setChar(data)
+        setCharacterSearchDefault(data);
+      });
   }
   useEffect(() => {
     getCharacterList();
   }, []);
 
-
+  console.log('This is the char', char);
+  console.log('This is the Default', characterSeachDefault);
   return (
     <BrowserRouter>
     <>
