@@ -18,14 +18,20 @@ const CharacterInfo = ({characters}: CharacterInfoProps) => {
         )
     }, [characters]);
 
+    let {name = '', gender = '', status = '', hair = '', origin = '', species = '', img_url = '', alias = []} = {...char};
 
-    let {name, gender, status, hair, origin, species, img_url, alias} = {...char};
-
-    
-    console.log(alias);
+    const cardGlowModifier = () => {
+        if (status.includes('Deceased') || status.includes('Destroyed')) {
+            return 'character-main-card--deceased';
+        } else if (status.includes('Unknown')){
+            return  'character-main-card--unknown';
+        } else {
+            return '';
+        }
+    }
   return (
     <div className='page-container'>
-        <div className='character-main-card'>
+        <div className={`character-main-card ${cardGlowModifier()}`}>
             
              <img className="character-image" src={img_url} alt={name} />
         

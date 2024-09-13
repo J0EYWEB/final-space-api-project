@@ -79,12 +79,19 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         setOriginFilter(!toggleOriginFilter);
     }
 
+    const handleResetFilters = () => {
+        setGenderFilter(false);
+        setSpeciesFilter(false);
+        setStatusFilter(false);
+        setOriginFilter(false);
+        reset();
+    }
   return (
     <aside className='nav-display'>
         <h2 className="nav-display__header">Search</h2>
         <NavSearch character={searchItem} inputChange={handleSearchChange}/>
         <div className='button-container'>
-            <SideNavButton label='All' filter={reset}/>
+            <SideNavButton label='All' filter={handleResetFilters}/>
         </div> 
         <button onClick={handleToggleFilterGender} className='nav-display__button'>Gender</button>
         {toggleGenderFilter && <div className='button-container'>
