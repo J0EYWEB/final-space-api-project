@@ -1,4 +1,6 @@
+@use '../../assets/styles/media-mixins.scss';
 @import '../../assets/styles/variables.scss';
+
 
 .welcome-page-container {
     height: 85vh;
@@ -9,12 +11,18 @@
 
     &__card {
         background-image: url('../../assets/Images/wp6521869-netflix-final-space-wallpapers.jpg');
-        background-repeat: none;
         background-size: cover;
         border: 2px solid $accent-color;
         border-radius: 10px;
         height: 80vh;
         width: 80vw;
+
+        @include media-mixins.large-phone{
+            background-size: cover;
+            background-position: right;
+            background-repeat: no-repeat;
+            height: 60vh;
+        }
 
         h1 {
             width: 50%;
@@ -25,7 +33,21 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            @include media-mixins.large-phone{
+                font-size: 50px;
+                width: 75%;
+                background: -webkit-linear-gradient(0.1turn, lime, lightblue);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            @include media-mixins.tablet{
+                font-size: 40px;
+            }
         }
     }
 
+    
 }

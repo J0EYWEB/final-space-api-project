@@ -28,8 +28,6 @@ function App() {
     getCharacterList();
   }, []);
 
-  console.log('This is the char', char);
-  console.log('This is the Default', characterSeachDefault);
   return (
     <BrowserRouter>
     <>

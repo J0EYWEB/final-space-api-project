@@ -1,6 +1,11 @@
+@use '../../assets/styles/media-mixins.scss';
 @import '../../assets/styles/variables.scss';
 
 .footer-container {
     height: 10.75vh;
     background-color: $primary-color;
+
+    @include media-mixins.large-phone{
+        height: 34vh;
+    }
 }

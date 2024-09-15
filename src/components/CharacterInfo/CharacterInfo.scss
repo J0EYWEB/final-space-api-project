@@ -1,3 +1,4 @@
+@use '../../assets/styles/media-mixins.scss';
 @import '../../assets/styles/variables.scss';
 
 .page-container {
@@ -6,7 +7,13 @@
     justify-content: center;
     align-items: center;
     border-top: 2px solid $accent-color;
+
+
+    @include media-mixins.tablet{
+        height: 400px;
+    }
 }
+
 .character-main-card {
     border: 2px solid $accent-color-bright;
     border-radius: 20px;
@@ -15,6 +22,29 @@
     width: 80vw;
     display: flex;
     box-shadow: 0 0  50px 20px $shadow-alive;
+    padding: 10px;
+
+
+    @include media-mixins.large-phone{
+        flex-direction: column;
+        height: auto;
+        margin-top: 500px;
+    }
+
+    @include media-mixins.tablet{
+        flex-direction: column;
+        height: 800px;
+        margin-top: 500px;
+        align-items: center;
+        
+    }
+
+    @include media-mixins.laptop{
+        height: auto;
+        
+    }
+
+    
 
     &--deceased {
         box-shadow: 0 0  50px 20px $shadow-deceased;
@@ -74,5 +104,15 @@
     .character-image{
         height: 70%;
         border-radius: 20px;
+
+        @include media-mixins.tablet{
+            height: 30%;
+            width: 50%;
+            
+        }
+
+        @include media-mixins.laptop{
+            height: 40%;
+        }
     }
 }

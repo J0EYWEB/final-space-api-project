@@ -1,4 +1,7 @@
+@use '../../assets/styles/media-mixins.scss';
 @import '../../assets/styles/variables.scss';
+
+
 
 .page-nav-button {
     padding: 10px 50px;
@@ -9,6 +12,10 @@
     font-family: $para-font;
     font-size: 20px;
     transition: .2s;
+
+    @include media-mixins.large-phone{
+        font-size: 10px;
+    }
 }
 
 .page-nav-button:hover {

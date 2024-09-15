@@ -1,3 +1,4 @@
+@use '../../assets/styles/media-mixins.scss';
 @import '../../assets/styles/variables.scss';
 
 .nav-display {
@@ -17,6 +18,10 @@
         background-color: $secondary-color;
         padding: 20px;
         margin: 0 0 10px 0;
+
+        @include media-mixins.large-phone{
+            font-size: 20px;
+        }
     }
 
     &__button {
@@ -29,6 +34,10 @@
         border: none;
         margin-bottom: 10px;
         transition: 0.25s;
+
+        @include media-mixins.large-phone{
+            font-size: 20px;
+        }
     }
 
     &__button:hover{
@@ -39,5 +48,9 @@
 
     .button-container {
         width: 90%;
+    }
+
+    @include media-mixins.large-phone{
+        width: 40%;
     }
 }
