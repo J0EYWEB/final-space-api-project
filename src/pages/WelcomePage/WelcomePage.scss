@@ -46,6 +46,10 @@
             @include media-mixins.tablet{
                 font-size: 40px;
             }
+
+            @include media-mixins.laptop{
+                font-size: 48px;
+            }
         }
     }
 
