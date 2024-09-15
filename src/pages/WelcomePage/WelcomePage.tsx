@@ -1,7 +1,5 @@
 import './WelcomePage.scss';
 
-
-
 const WelcomePage = () => {
   return (
     <div className='welcome-page-container'>

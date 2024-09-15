@@ -86,6 +86,7 @@ const SideNav = ( {data, setChar, reset, original }: NavProps) => {
         setOriginFilter(false);
         reset();
     }
+
   return (
     <aside className='nav-display'>
         <h2 className="nav-display__header">Search</h2>
