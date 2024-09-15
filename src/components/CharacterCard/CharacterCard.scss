@@ -5,18 +5,18 @@
     overflow: hidden;
     width: 250px;
     height: 40rem;
-    background: #002934e8;
+    background: $tertiary-color;
     border-radius: 10px;
     margin: 0.75rem;
-    box-shadow: 0 0  20px 5px green;
+    box-shadow: 0 0  20px 5px $shadow-alive;
     transition: 0.4s;
 
     &--deceased {
-        box-shadow: 0 0 20px 5px red;
+        box-shadow: 0 0 20px 5px $shadow-deceased;
     }
     
     &--unknown {
-        box-shadow: 0 0 20px 5px purple;
+        box-shadow: 0 0 20px 5px $shadow-unknown;
     }
     
 
@@ -50,7 +50,7 @@
 
         &__header {
             font-family: $header-font;
-            color: cyan;
+            color: $accent-color-bright;
             font-size: 20px;
             padding: 0;
             margin: 0;
@@ -66,5 +66,5 @@
 
 a {
     text-decoration: none;
-    color: white;
+    color: $white-color;
 }

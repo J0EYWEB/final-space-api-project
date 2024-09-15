@@ -5,13 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid #0585a5;
+    border-top: 2px solid $accent-color;
 
     &__card {
         background-image: url('../../assets/Images/wp6521869-netflix-final-space-wallpapers.jpg');
         background-repeat: none;
         background-size: cover;
-        border: 2px solid #0585a5;
+        border: 2px solid $accent-color;
         border-radius: 10px;
         height: 80vh;
         width: 80vw;
@@ -21,8 +21,7 @@
             font-family: $header-font;
             text-transform: uppercase;
             font-size: 80px;
-            color: white;
-            background: -webkit-linear-gradient(0.1turn, white, #0585a5);
+            background: -webkit-linear-gradient(0.1turn, $white-color, $accent-color);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;

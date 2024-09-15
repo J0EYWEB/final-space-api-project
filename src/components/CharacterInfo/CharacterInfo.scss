@@ -5,22 +5,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid #0585a5;
+    border-top: 2px solid $accent-color;
 }
 .character-main-card {
-    border: 2px solid cyan;
+    border: 2px solid $accent-color-bright;
     border-radius: 20px;
-    background: #002934e8;
+    background: $tertiary-color;
     height: 80vh;
     width: 80vw;
     display: flex;
-    box-shadow: 0 0  50px 20px green;
+    box-shadow: 0 0  50px 20px $shadow-alive;
 
     &--deceased {
-        box-shadow: 0 0  50px 20px red;
+        box-shadow: 0 0  50px 20px $shadow-deceased;
     }
     &--unknown {
-        box-shadow: 0 0  50px 20px purple;
+        box-shadow: 0 0  50px 20px $shadow-unknown;
     }
 
     &__info {
@@ -35,7 +35,7 @@
 
             .info-pairing {
                 width: 50%;
-                border-bottom: 2px solid cyan;
+                border-bottom: 2px solid $accent-color-bright;
 
                 p {
                     text-align: center;
@@ -57,13 +57,13 @@
         align-items: center;
         font-family: $header-font;
         font-size: 50px;
-        border-bottom: 2px solid cyan;
+        border-bottom: 2px solid $accent-color-bright;
     }
 
     .main-card-subheading {
         font-family: $header-font;
         font-size: 25px;
-        color: cyan;
+        color: $accent-color-bright;
 
     }
 

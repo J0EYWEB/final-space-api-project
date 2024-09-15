@@ -5,9 +5,9 @@
     flex-wrap: wrap;
     width: 100%;
     gap: 15px;
-    border-top: 2px solid #0585a5;
-    border-left: 2px solid #0585a5;
-    border-bottom: 2px solid #0585a5;
+    border-top: 2px solid $accent-color;
+    border-left: 2px solid $accent-color;
+    border-bottom: 2px solid $accent-color;
 }
 
 .default-error {
@@ -24,10 +24,10 @@
     }
 
     &--color {
-        background-color: rgba(128, 0, 0, 0.565);
-        border-top: 2px solid #0585a5;
-        border-left: 2px solid #0585a5;
-        border-bottom: 2px solid #0585a5;
+        background-color: $error-color;
+        border-top: 2px solid $accent-color;
+        border-left: 2px solid $accent-color;
+        border-bottom: 2px solid $accent-color;
     }
 
 }

@@ -9,12 +9,12 @@
     
 
     &--background {
-        background-color: #00293488;
+        background-color: $primary-color;
     }
 
     .page-heading {
         font-size: 80px;
-        color: white;
+        color: $white-color;
         letter-spacing: 5px;
         font-family: $header-font;
         text-transform: uppercase;

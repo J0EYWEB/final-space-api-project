@@ -4,11 +4,11 @@
     justify-content: center;
 
     &__input {
-        border: 2px solid #0585a5;
-        background-color: #002934e8;
+        border: 2px solid $accent-color;
+        background-color: $tertiary-color;
         width: 70%;
         padding: 20px;
-        color: white;
+        color: $white-color;
         border-radius: 10px;
         font-size: 20px;
         font-family: $para-font;
@@ -17,6 +17,6 @@
 
     &__input:focus {
         outline: none;
-        border-color: cyan;
+        border-color: $accent-color-bright;
     }
 }

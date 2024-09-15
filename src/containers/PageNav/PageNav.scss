@@ -1,9 +1,11 @@
+@import '../../assets/styles/variables.scss';
+
 .page-nav-container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 
     &--background {
-        background-color: #00293488;
+        background-color: $primary-color;
     }
 }
