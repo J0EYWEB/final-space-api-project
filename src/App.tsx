@@ -30,9 +30,9 @@ function App() {
     <>
       <PageNav />
       <Routes>
-        <Route path='/' element={<WelcomePage />} />
-        <Route path='/characters' element={<CharacterPage data={char} original={characterSeachDefault} setChar={setChar} reset={getCharacterList} />}/>
-        <Route path='/characters/:id' element={<CharacterInfo characters={char}/>}/>
+        <Route path='/final-space-api-project/' element={<WelcomePage />} />
+        <Route path='/final-space-api-project/characters' element={<CharacterPage data={char} original={characterSeachDefault} setChar={setChar} reset={getCharacterList} />}/>
+        <Route path='/final-space-api-project/characters/:id' element={<CharacterInfo characters={char}/>}/>
       </Routes>
     </>
     

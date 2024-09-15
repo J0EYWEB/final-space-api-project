@@ -14,7 +14,7 @@ const CardsSection = ({data}: CardsSectionProps)=> {
     <section className='character-container'>
       {data.map((characters: characters) => {
         return (
-          <Link key={characters.id} to={`/characters/${characters.id}`}>
+          <Link key={characters.id} to={`/final-space-api-project/characters/${characters.id}`}>
             <CharacterCard key={characters.id} characters={characters} />
           </Link>
         )
